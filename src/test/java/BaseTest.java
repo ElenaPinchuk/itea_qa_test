@@ -18,8 +18,8 @@ public class BaseTest {
         driver.get("https://www.google.com/");
     }
 
-    @AfterClass
-    public void tearDown() {
-        driver.quit();
-    }
+//    @AfterClass
+ //   public void tearDown() {
+   //     driver.quit();
+  //  }
 }

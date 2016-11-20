@@ -6,10 +6,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
+/**
+ * Page that defines the first results page.
+ * Finds and matches elements of the page.
+ */
 public class ResultPageFirst extends BasePage {
 
-    @FindBy(id="logo")
-    private WebElement googleLogo;
+    @FindBy(id = "center_col")
+    private WebElement centralColumn;
+   @FindBy(id = "lst-ib")
+   private WebElement searchField;
 
     @FindBy(xpath = "//a[@class='_Fmb ab_button']")
     private List<WebElement> searchResultsDescriptionsList;
@@ -17,10 +23,14 @@ public class ResultPageFirst extends BasePage {
     @FindBy(id = "pnnext")
     private WebElement nextPageButton;
 
+    /**
+     * Initiates elements of the class using the Page Factory Pattern.
+     * @param driver Browser driver that supports dynamic web pages.
+     */
     public ResultPageFirst(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
-        waitUntilElementDisplayed(googleLogo);
+        waitUntilElementDisplayed(searchField);
     }
 
     /**
@@ -28,6 +38,7 @@ public class ResultPageFirst extends BasePage {
      * @return int that displays the result number on page.
      */
     public int getSearchResultsOnPageCount() {
+      waitUntilElementDisplayed(nextPageButton);
         return searchResultsDescriptionsList.size();
     }
 
@@ -37,6 +48,7 @@ public class ResultPageFirst extends BasePage {
     public boolean checkSearchTermForEachResultInList(String searchTerm) {
         for (int i = 0; i < searchResultsDescriptionsList.size(); i++) {
             searchResultsDescriptionsList.get(i).getText().contains(searchTerm);
+            waitUntilElementDisplayed(nextPageButton);
             if (searchTerm != null && searchTerm.equals(searchResultsDescriptionsList)); {
                 return true;
             }
@@ -45,13 +57,13 @@ public class ResultPageFirst extends BasePage {
     }
 
     /**
-     * Clicks the advanced link
-     * @return SearchPage with advanced search
+     * Redirects to the next page.
+     * @return SearchPageSecond with search results.
      */
-    public ResultPageSecond clicknextPageButton() {
+    public ResultPageSecond clickNextPageButton() {
         nextPageButton.click();
+        waitUntilElementDisplayed(centralColumn);
         return new ResultPageSecond(driver);
     }
-
 }
 
