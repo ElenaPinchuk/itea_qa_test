@@ -6,16 +6,16 @@ Use IntellijIDEA to create new Java/MVN project that verifies google search engi
 
 ###Expected result: ###
 Automated test by following scenario:
-1. Open FireFox web browser
-2. Navigate to Google.com
-3. Enter "ITEA" into search field
-4. Click on "Search" button
-5. Verify "searchResults" page is loaded
-6. Verify there are 7 search results displayed on "searchResults" page
-7. Verify that each result item on 1st page contains search term
-8. Click on 2nd searchResults page link
-9. Verify there are 10 search results displayed on 2nd "searchResults" page
-10. Verify that each result item on 2nd page contains search term.
+1. Open FireFox web browser   
+2. Navigate to Google.com   
+3. Enter "ITEA" into search field   
+4. Click on "Search" button   
+5. Verify "searchResults" page is loaded   
+6. Verify there are 7 search results displayed on "searchResults" page   
+7. Verify that each result item on 1st page contains search term   
+8. Click on 2nd searchResults page link   
+9. Verify there are 10 search results displayed on 2nd "searchResults" page   
+10. Verify that each result item on 2nd page contains search term.   
 
 ## Realization: ##
 Best practices I have used during this task execution:
