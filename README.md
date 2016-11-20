@@ -5,7 +5,7 @@ ITEA exam test automation project
 Use IntellijIDEA to create new Java/MVN project that verifies google search engine.
 
 ###Expected result: ###
-Automated test by following scenario:
+Automated test by following scenario:   
 1. Open FireFox web browser   
 2. Navigate to Google.com   
 3. Enter "ITEA" into search field   
